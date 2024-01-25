@@ -4,8 +4,8 @@ import time
 import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
+import os
 
-#api_key = 'a69c60d89b8617020dfd730c505cbce1'
 
 
 def get_live_temp(lat, lon):
@@ -15,7 +15,7 @@ def get_live_temp(lat, lon):
     if r.status_code == 200:
         weather_data = r.json()
     else:
-        print(f"Error: {r_gsh.status_code}")
+        print(f"Error: {r.status_code}")
         return None
 
     return weather_data
@@ -26,11 +26,12 @@ def load_gif(file_path: str):
         return json.load(f)
 
 
+api_key = str(os.environ.get('API_OPENWEATHER'))
 sun_img = Image.open("images/sun.png")
 circle_img = Image.open("images/circle.png")
 gif = load_gif("lottie/Animation.json")
 base_url = ("https://api.openweathermap.org/data/2.5/weather?"
-               "appid=f80451c90efdc5d2722ad50554799a35&units=metric")
+               "appid=" + api_key + "&units=metric")
 cities_loc = {'Gabash':[32.078121, 34.847019], 'Netanya':[32.329369,34.856541],
               'Modiin':[31.899160, 35.007408], 'Eilat':[29.557669, 34.951923], 'Haifa':[32.817280, 34.988762]}
 cities_wether = {}
