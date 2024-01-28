@@ -35,7 +35,7 @@ circle_img = Image.open("images/circle.png")
 gif = load_gif("lottie/Animation.json")
 base_url = ("https://api.openweathermap.org/data/2.5/weather?"
                "appid=" + str(api_key) + "&units=metric")
-cities_loc = {'Gabash':[32.078121, 34.847019], 'Netanya':[32.329369,34.856541],
+cities_loc = {'Gabash':[32.078121, 34.847019], 'Netanya':[32.329369, 34.856541],
               'Modiin':[31.899160, 35.007408], 'Eilat':[29.557669, 34.951923], 'Haifa':[32.817280, 34.988762]}
 cities_wether = {}
 
