@@ -2,6 +2,8 @@
 /shelf/
 /workspace.xml
 .idea/
+*.zip
+/.venv
 /logging.log
 /update_data/token.json
 /update_data/client_secret_50327212199-sbs23vt4cam74nmtuacl9fpgg2ookhq3.apps.googleusercontent.com.json
